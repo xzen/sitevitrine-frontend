@@ -1,9 +1,16 @@
-import React from 'react';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-function App() {
+import Public from "./Public";
+import Admin from "./Admin";
+
+const App = () => {
   return (
-    <div>coucou</div>
+    <Switch>
+      <Route path="/admin" component={Admin} />
+      <Route path="/" component={Public} />
+    </Switch>
   );
-}
+};
 
 export default App;
