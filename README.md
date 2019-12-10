@@ -5,6 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## What's inside?
 
 A quick look at the top-level files and directories you'll see in the project.
+
+```bash
 .
 ├── node_modules
 ├── public
@@ -13,6 +15,7 @@ A quick look at the top-level files and directories you'll see in the project.
 ├─── package-lock.json
 ├─── package.json
 └─── README.md
+```
 
 1. /node_modules: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
