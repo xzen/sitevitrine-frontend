@@ -1,16 +1,14 @@
 import React from "react";
-// import ScrollableAnchor from "react-scrollable-anchor";
 
 const Prix = () => {
   return (
-    // <ScrollableAnchor id="consultations">
-    <div>
+    <div id="consultations">
       <h1 className="text-center">Mes consultations</h1>
 
       <div className="type-consultation">
         <div className="modalité-consultation">
           <h5 className="title">
-            Je propose différentes modalités de consultations :{" "}
+            Je propose différentes modalités de consultations :
           </h5>
           <ul>
             <li>A votre domicile</li>
@@ -42,7 +40,6 @@ const Prix = () => {
         </div>
       </div>
     </div>
-    // </ScrollableAnchor>
   );
 };
 
