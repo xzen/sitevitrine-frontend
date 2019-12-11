@@ -24,7 +24,7 @@ const AdminHome = () => (
             </div>
           </div>
         </div>
-        <div className="rdv">
+        {/* <div className="rdv">
           <h4>En attente</h4>
           <div>
             <div className="content-admin-rdv">
@@ -44,7 +44,7 @@ const AdminHome = () => (
               <button className="btn btn-danger btn-rdv">refuser</button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="home-admin-col col-7">

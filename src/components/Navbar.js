@@ -29,15 +29,17 @@ const Navbar = props => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link" href="#consultations">
                 Consultations
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/testimonials" className="nav-link">
-                Témoignages
-              </Link>
-            </li>
+            {!props.isAdmin && (
+              <li className="nav-item">
+                <Link to="/testimonials" className="nav-link">
+                  Témoignages
+                </Link>
+              </li>
+            )}
             <li className="nav-item">
               <Link to="/blog" className="nav-link">
                 Blog

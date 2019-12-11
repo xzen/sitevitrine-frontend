@@ -25,7 +25,7 @@ const Public = props => {
         <Route exact path={`${props.match.url}contact`} component={Contact} />
         <Route component={NotFound} />
       </Switch>
-      <Footer />
+      <Footer isAdmin={isAdmin} />
     </>
   );
 };
