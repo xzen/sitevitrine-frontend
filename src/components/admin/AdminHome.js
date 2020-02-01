@@ -53,7 +53,7 @@ const AdminHome = () => (
           <div class="row no-gutters">
             <div class="img-home-adim col-md-4">
               <img
-                src={require("../img/3article-aromatherapie.jpg")}
+                src={require("../../img/3article-aromatherapie.jpg")}
                 class="card-img"
                 alt="..."
               />
@@ -79,7 +79,7 @@ const AdminHome = () => (
           <div class="row no-gutters">
             <div class="img-home-adim col-md-4">
               <img
-                src={require("../img/1article-aromatherapie.jpg")}
+                src={require("../../img/1article-aromatherapie.jpg")}
                 class="card-img"
                 alt="..."
               />
@@ -104,7 +104,7 @@ const AdminHome = () => (
           <div class="row no-gutters">
             <div class="img-home-adim col-md-4">
               <img
-                src={require("../img/2article-aromatherapie.jpg")}
+                src={require("../../img/2article-aromatherapie.jpg")}
                 class="card-img"
                 alt="..."
               />

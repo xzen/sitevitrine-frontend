@@ -5,7 +5,6 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import Blog from "./Blog";
 import Testimonials from "./Testimonials";
-import Contact from "./Contact";
 import NotFound from "./NotFound";
 import Footer from "./Footer";
 
@@ -22,7 +21,6 @@ const Public = props => {
           path={`${props.match.url}testimonials`}
           component={Testimonials}
         />
-        <Route exact path={`${props.match.url}contact`} component={Contact} />
         <Route component={NotFound} />
       </Switch>
       <Footer isAdmin={isAdmin} />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = props => {
   console.log("props.isAdmin", props.isAdmin);
@@ -28,17 +28,24 @@ const Navbar = props => {
                 Accueil
               </Link>
             </li>
-            <a href="#consultations">
+            {!props.isAdmin && (
               <li className="nav-item">
-                <Link to="/" className="nav-link">
+                <Link to="/#consultations" className="nav-link">
                   Consultations
                 </Link>
               </li>
-            </a>
+            )}
             {!props.isAdmin && (
               <li className="nav-item">
                 <Link to="/testimonials" className="nav-link">
                   Témoignages
+                </Link>
+              </li>
+            )}
+            {props.isAdmin && (
+              <li className="nav-item">
+                <Link to="/AdminRdv" className="nav-link">
+                  RDV
                 </Link>
               </li>
             )}
@@ -49,7 +56,7 @@ const Navbar = props => {
             </li>
             {!props.isAdmin && (
               <li className="nav-item">
-                <Link to="/contact" className="nav-link">
+                <Link to="/#contact" className="nav-link">
                   Contact
                 </Link>
               </li>

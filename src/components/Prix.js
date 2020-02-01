@@ -2,8 +2,10 @@ import React from "react";
 
 const Prix = () => {
   return (
-    <div id="consultations">
-      <h1 className="text-center">Mes consultations</h1>
+    <div>
+      <h1 className="text-center" id={"consultations"}>
+        Mes consultations
+      </h1>
 
       <div className="type-consultation">
         <div className="modalité-consultation">

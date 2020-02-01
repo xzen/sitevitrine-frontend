@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Public from "./Public";
-import Admin from "./Admin";
+import Admin from "../components/admin/Admin";
 
 const App = () => {
   return (

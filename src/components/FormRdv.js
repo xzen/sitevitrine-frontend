@@ -2,7 +2,7 @@ import React from "react";
 
 const FormRvd = () => {
   return (
-    <div>
+    <div id={"contact"}>
       <div className="container rdv-from">
         <form>
           <h2>Prendre contact</h2>
