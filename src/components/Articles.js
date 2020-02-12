@@ -11,6 +11,7 @@ const Articles = () => {
             <img
               src={require("../img/1article-aromatherapie.jpg")}
               className="card-img-top"
+              alt="ar4"
             />
             <div className="card-body">
               <h4 className="card-title">Qu’est-ce-que l’aromathérapie ?</h4>
@@ -28,6 +29,7 @@ const Articles = () => {
             <img
               src={require("../img/2article-aromatherapie.jpg")}
               className="card-img-top"
+              alt="aro"
             />
             <div className="card-body">
               <h4 className="card-title">
@@ -47,6 +49,7 @@ const Articles = () => {
             <img
               src={require("../img/3article-aromatherapie.jpg")}
               className="card-img-top"
+              alt="aro2"
             />
             <div className="card-body">
               <h4 className="card-title">
@@ -67,6 +70,7 @@ const Articles = () => {
             <img
               src={require("../img/4article-aromatherapie.jpg")}
               className="card-img-top"
+              alt="aro3"
             />
             <div className="card-body">
               <h4 className="card-title">Check-list spéciale vacances</h4>

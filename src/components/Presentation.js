@@ -4,7 +4,7 @@ const Presentation = () => {
     return(
         <>
             <div className='container presentation'>
-                <img className='image-bienvenue' src={require('../img/Présentation.jpg')}/>
+                <img className='image-bienvenue' src={require('../img/Présentation.jpg')} alt="présentation" />
                 <div>
                     <h4 className='mb-3'>Présentation</h4>
                     <p>

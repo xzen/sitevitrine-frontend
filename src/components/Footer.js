@@ -1,7 +1,9 @@
 import React from "react";
+import { connect } from "react-redux"
 import { Link } from "react-router-dom";
+import { openModal } from './admin/modal/actions/';
 
-const Footer = () => {
+const Footer = ({ dispatch }) => {
   return (
     <footer className="main-footer">
       <div className="container main-footer-content">
@@ -10,12 +12,14 @@ const Footer = () => {
             <img
               src={require("../img/icon/fb-icon.svg")}
               className="icon-social"
+              alt="facebook"
             />
           </Link>
           <Link to="">
             <img
               src={require("../img/icon/insta-icon.svg")}
               className="icon-social"
+              alt="instagram"
             />
           </Link>
         </div>
@@ -38,11 +42,11 @@ const Footer = () => {
           <Link to="/contact">Contact</Link>
         </p>
         <p>
-          <Link to="/admin">Administrateur</Link>
+          <button to="/admin" onClick={ () => dispatch(openModal(true)) }>Administrateur</button>
         </p>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default connect()(Footer);

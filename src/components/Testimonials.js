@@ -3,10 +3,9 @@ import React from "react";
 const Testimonials = () => {
   return (
     <div id="conponent-body">
-      <h2 className="title">Témoignages</h2>
-
+      <h2 className="title mb-5">Témoignages</h2>
       <div className="container">
-        <div className="row">
+        <div className="row mb-4">
           <div className="col-lg-4">
             <div className="card">
               <div className="card-header">
@@ -22,8 +21,6 @@ const Testimonials = () => {
               <div className="card-footer">Date</div>
             </div>
           </div>
-        </div>
-        <div className="row">
           <div className="col-lg-4">
             <div className="card">
               <div className="card-header">
@@ -39,8 +36,6 @@ const Testimonials = () => {
               <div className="card-footer">Date</div>
             </div>
           </div>
-        </div>
-        <div className="row">
           <div className="col-lg-4">
             <div className="card">
               <div className="card-header">

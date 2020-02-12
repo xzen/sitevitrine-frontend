@@ -2,22 +2,28 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from "redux-thunk";
 import reducers from "./store/reducers";
 
 import App from "./components/App";
 
 import "./css/index.css";
-import { create } from "domain";
-require("bootstrap");
 
-const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
+const store = createStore(
+  reducers,
+  compose(
+    applyMiddleware(reduxThunk),
+    window.devToolsExtension && window.devToolsExtension()
+  )
+);
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <div>
+        <App />
+      </div>
     </Router>
   </Provider>,
   document.getElementById("root")

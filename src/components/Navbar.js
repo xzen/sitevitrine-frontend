@@ -2,13 +2,12 @@ import React from "react";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = props => {
-  console.log("props.isAdmin", props.isAdmin);
   return (
     <div className="menu">
       <nav className="container navbar navbar-expand-md navbar-light">
-        <a href="" className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           Pronfondément Essentielle
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
