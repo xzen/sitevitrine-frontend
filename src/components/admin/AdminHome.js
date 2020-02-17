@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Articles from "../Articles";
+import ListPatient from "../ListPatient";
 
 class AdminHome extends Component {
   render() {
@@ -16,17 +17,7 @@ class AdminHome extends Component {
           <div className="row">
             <div className="home-admin-col col-5">
               <h4>A rappeler</h4>
-              <div className="row">
-                <div className="rdv">
-                  <div className="content-admin-rdv">
-                    <p className="pl-1 pr-4">non</p>
-                    <p className="pl-1 pr-4">prénom</p>
-                    <p className="pl-1 pr-4">email</p>
-                    <p className="pl-1 pr-4">téléphone</p>
-                    <p className="pl-1 pr-4">sujet</p>
-                  </div>
-                </div>
-              </div>
+              <ListPatient />
             </div>
 
             <div className="home-admin-col col-7 text-center">
