@@ -1,11 +1,13 @@
 import React from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { openModal } from './admin/modal/actions/';
+import { openModal } from "./admin/modal/actions/";
+import Modal from "./admin/modal/";
 
-const Footer = ({ dispatch }) => {
+const Footer = ({ dispatch, isLogeg }) => {
   return (
     <footer className="main-footer">
+      <Modal />
       <div className="container main-footer-content">
         <div>
           <Link to="">
@@ -42,11 +44,20 @@ const Footer = ({ dispatch }) => {
           <Link to="/contact">Contact</Link>
         </p>
         <p>
-          <button to="/admin" onClick={ () => dispatch(openModal(true)) }>Administrateur</button>
+          {!isLogeg ? (
+            <button to="/admin" onClick={() => dispatch(openModal(true))}>
+              Administrateur
+            </button>
+          ) : null}
         </p>
       </div>
     </footer>
   );
 };
 
-export default connect()(Footer);
+const mapToProps = state => {
+  const { isLogeg } = state.session;
+  return { isLogeg };
+};
+
+export default connect(mapToProps)(Footer);

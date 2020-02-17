@@ -2,7 +2,7 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <div id="conponent-body">
+    <div id="conponent-body" id={"contact"}>
       <h2 className="title mb-5">Témoignages</h2>
       <div className="container">
         <div className="row mb-4">

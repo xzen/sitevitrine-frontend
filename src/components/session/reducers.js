@@ -1,18 +1,27 @@
-import { fromJS } from 'immutable';
-import actionTypes from './action-types';
+import { fromJS } from "immutable";
+import actionTypes from "./action-types";
+import Cookies from "universal-cookie";
 
 const initialState = {
   isLoged: false
 };
 
 const loged = state => {
-  console.log(state);
-  return fromJS(state).setIn (['isLoged'], true).toJS();
+  const cookies = new Cookies();
+  cookies.set("isLoged", "true");
+
+  return fromJS(state)
+    .setIn(["isLoged"], true)
+    .toJS();
 };
-const logout = state => fromJS(state).setIn (['isLoged'], false).toJS();
+
+const logout = state =>
+  fromJS(state)
+    .setIn(["isLoged"], false)
+    .toJS();
 
 export default (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case actionTypes.LOGED:
       return loged(state);
     case actionTypes.LOGOUT:
@@ -20,4 +29,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-}
+};

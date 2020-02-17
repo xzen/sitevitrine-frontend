@@ -1,10 +1,13 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import axios from 'axios';
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import axios from "axios";
 
-import { Modal } from "react-bootstrap";
-import { openModal } from './actions/'
-import { loged, logout } from '../../session/actions'
+import { Modal } from "react-bootstrap";
+import { openModal } from "./actions/";
+import { loged, logout } from "../../session/actions";
+
+const RedirectLogin = isLoged => (isLoged ? <Redirect to="/admin" /> : null);
 
 class ModalAdmin extends Component {
   constructor() {
@@ -16,8 +19,8 @@ class ModalAdmin extends Component {
     this.onHandleShow = this.onHandleShow.bind(this);
 
     this.state = {
-      email: '',
-      password: ''
+      email: "",
+      password: ""
     };
   }
 
@@ -25,7 +28,7 @@ class ModalAdmin extends Component {
    * on handle close
    */
   onHandleClose() {
-    const { dispatch } = this.props;
+    const { dispatch } = this.props;
 
     dispatch(openModal(false));
 
@@ -36,7 +39,7 @@ class ModalAdmin extends Component {
    * on handle show
    */
   onHandleShow() {
-    const { dispatch } = this.props;
+    const { dispatch } = this.props;
 
     dispatch(openModal(true));
 
@@ -62,20 +65,23 @@ class ModalAdmin extends Component {
 
     e.preventDefault();
 
-    axios.post('http://localhost:8081/oauth', {
-      email,
-      password
-    }).then(response => {
-      this.onHandleClose();
-      dispatch(loged());
-    }).catch(error => {
-      dispatch(logout());
-    });
+    axios
+      .post("http://localhost:8081/oauth", {
+        email,
+        password
+      })
+      .then(response => {
+        this.onHandleClose();
+        dispatch(loged());
+      })
+      .catch(error => {
+        dispatch(logout());
+      });
   }
 
   render() {
     const { email, password } = this.state;
-    const { open } = this.props;
+    const { open } = this.props;
 
     return (
       <Modal show={open} onHide={this.onHandleClose}>
@@ -86,16 +92,29 @@ class ModalAdmin extends Component {
           <form>
             <div className="form-group">
               <label htmlFor="email">E-mail</label>
-              <input type="email" id="email" value={email} onChange={(e) => this.onHandleEmail(e)} className="form-control" />
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={e => this.onHandleEmail(e)}
+                className="form-control"
+              />
             </div>
             <div className="form-group">
               <label htmlFor="password">mot de passe</label>
-              <input type="password" id="password" value={password} onChange={(e) => this.onHandlePassword(e)} className="form-control" />
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={e => this.onHandlePassword(e)}
+                className="form-control"
+              />
             </div>
-            <button variant="primary" onClick={(e) => this.login(e)}>
+            <button variant="primary" onClick={e => this.login(e)}>
               Singin
             </button>
           </form>
+          <RedirectLogin />
         </Modal.Body>
         <Modal.Footer>
           <button variant="secondary" onClick={this.onHandleClose}>
@@ -105,12 +124,12 @@ class ModalAdmin extends Component {
       </Modal>
     );
   }
-};
+}
 
-const mapToProps = (state) => {
+const mapToProps = state => {
   const { open } = state.modal;
 
-  return ({ open });
-}
+  return { open };
+};
 
 export default connect(mapToProps)(ModalAdmin);

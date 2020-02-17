@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
-import "../scss/index.scss";
 
 const Article = ({ title, text, author, date, truncateSize, col }) => {
   const truncate = (source, size) =>
@@ -9,8 +7,8 @@ const Article = ({ title, text, author, date, truncateSize, col }) => {
     <div className={`col-${col} mb-3`}>
       <div className="card">
         {/* <img src="{ image }" alt="image article">
-      {image}
-    </img> */}
+        {image}
+      </img> */}
         <div className="card-body">
           <h4 className="card-title">{title}</h4>
           <p className="card-text">
@@ -28,7 +26,7 @@ const Article = ({ title, text, author, date, truncateSize, col }) => {
   );
 };
 
-class Articles extends Component {
+class AdminHome extends Component {
   state = {
     articles: []
   };
@@ -45,9 +43,6 @@ class Articles extends Component {
   }
 
   render() {
-    const { articles } = this.state;
-    const { truncateSize, col } = this.props;
-
     return (
       <div className="container">
         <div className="row mt-3 mb-3">
@@ -73,4 +68,4 @@ class Articles extends Component {
   }
 }
 
-export default Articles;
+export default AdminHome;

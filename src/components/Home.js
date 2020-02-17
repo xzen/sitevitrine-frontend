@@ -3,11 +3,15 @@ import React from "react";
 import Prix from "./Prix";
 import Articles from "./Articles";
 import Presentation from "./Presentation";
-import Formulaire from "./FormRdv";
+import Contact from "./Contact";
+import Testimonials from "./Testimonials";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-const Home = props => {
+const Home = () => {
   return (
     <div className="home">
+      <Navbar />
       <div className="home-top">
         <div className="home-top-text container">
           <h1 className="display-5 title-home-top">
@@ -23,8 +27,11 @@ const Home = props => {
       </div>
       <Presentation />
       <Prix />
-      <Articles />
-      <Formulaire />
+      <Testimonials />
+      <h1 className="text-center mt-4 mb-5">Articles</h1>
+      <Articles limit={3} truncateSize={100} col={4} />
+      <Contact />
+      <Footer />
     </div>
   );
 };
