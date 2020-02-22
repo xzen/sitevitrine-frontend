@@ -1,37 +1,39 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
-const NavbarAdmin = () => {
+const NavbarAdmin = props => {
   return (
     <div className="menu">
-      <nav className="container navbar navbar-axpand-md navbar-light">
-        <a href="" className="navbar-brand">
-          profondément Essentielle
-        </a>
-        <ul>
-          <li className="nav-item">
-            <Link to="" className="nav-link">
-              Accueil
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="" className="nav-link">
-              Rendez-vous
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="" className="nav-link">
-              Article
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="" className="nav-link">
-              Avis
-            </Link>
-          </li>
-        </ul>
-        <button>
-          <Link to="/">Site public</Link>
+      <nav className="container navbar navbar-expand-md navbar-light">
+        <Link to="/" className="navbar-brand">
+          Pronfondément Essentielle
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#menu"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
         </button>
+
+        <div className="collapse navbar-collapse" id="menu">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item active">
+              <Link to="/AdminHome" className="nav-link">
+                Accueil
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/AdminBlog" className="nav-link">
+                Blog
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   );

@@ -29,7 +29,7 @@ const Home = () => {
       <Prix />
       <Testimonials />
       <h1 className="text-center mt-4 mb-5">Articles</h1>
-      <Articles limit={3} truncateSize={100} col={4} />
+      <Articles limit={3} truncateSize={50} col={4} />
       <Contact />
       <Footer />
     </div>

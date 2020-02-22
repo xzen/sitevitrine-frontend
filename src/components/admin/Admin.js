@@ -10,7 +10,7 @@ import AdminBlog from "../admin/AdminBlog";
 const Admin = props => {
   return (
     <>
-      <Navbar />
+      <NavbarAdmin />
       <AdminHome />
       <AdminRdv />
       <AdminBlog />
